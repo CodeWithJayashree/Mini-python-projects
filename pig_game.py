@@ -25,5 +25,34 @@ while True:
     else:
         print('\nInvalid. Must enter a number between 2 and 4')
 
+max_score = 50 #max score to win the game
+player_scores = [0 for _ in range(num_players)] #stores the scores of each player
+print(player_scores)
+#This is the first time I have seen/used list comprehension. Essentially its a shortcut for writing the code commented out below.
 
+#player_scores = []
+#for i in range(num_players):
+    #player_scores.append(0)
 
+#Both have the same functionality, its just that list comprehension is cleaner and faster.
+
+while max(player_scores) < max_score: #winning condition of the game. 
+    for player_index in range(num_players): #simulates each player's individual turn.
+        while True: #loops that player's turn until they either roll a 1 or choose to hold their points.
+            current_score = 0
+            print(f'\nPlayer number {player_index + 1}\'s turn has begun!\n')
+            should_roll = input(f'Would you like to roll the dice? (y) ?  ')
+            if should_roll.lower() != 'y':
+                break
+            value = roll()
+            if value == 1:
+                current_score = 0 #reset score if they roll a one
+                print(f'You rolled a 1! You lost all points for this turn. Better luck next time!')
+                break
+            else: 
+                print(f'You rolled a {value}! You earned {value} points this turn!')
+                current_score += value
+            print(f'Your current score is: {current_score}')
+    
+    player_scores[player_index] += current_score
+    print(f'Your total score is: {player_scores[player_index]}')
