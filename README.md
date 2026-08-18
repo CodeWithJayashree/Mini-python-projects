@@ -1,2 +1,3 @@
 # Mini-python-projects
-Simple python projects made with youtube tutorials to keep practicing my python skills!
+Working on mini Python projects to get back into coding after a big project! 
+These are made by watching YouTube tutorials and are a fun way to practice my Python. 
