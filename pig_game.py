@@ -21,7 +21,9 @@ while True:
             print(f'\n{num_players} player(s) are playing!')
             break
         else:
-            print('\nEnter a number between 1 and 4')
+            print('\nEnter a number between 2 and 4')
+    else:
+        print('\nInvalid. Must enter a number between 2 and 4')
 
 
 
